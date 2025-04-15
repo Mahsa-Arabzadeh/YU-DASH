@@ -1,0 +1,19 @@
+<div class="sidenav-header">
+  <img
+    width="100"
+    height="100"
+    src="ChatGPT Image Apr 11, 2025, 11_52_40 PM.png"
+    alt="profile"
+  />
+  <div class="header-text">
+    <h2>Your channel</h2>
+    <p>Mahsa Arabzadeh</p>
+  </div>
+</div>
+
+<mat-nav-list>
+  <a mat-list-item *ngFor="let item of menuItems()">
+    <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+    <span matListItemTitle>{{ item.label }}</span>
+  </a>
+</mat-nav-list>
