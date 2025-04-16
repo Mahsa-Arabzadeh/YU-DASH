@@ -1,19 +1,31 @@
 <div class="sidenav-header">
   <img
-    width="100"
-    height="100"
+    [width]="profilePicSize()"
+    [height]="profilePicSize()"
     src="ChatGPT Image Apr 11, 2025, 11_52_40 PM.png"
     alt="profile"
   />
-  <div class="header-text">
+  <div class="header-text" [class.hide-header-text]="slideNavCollapsed()">
     <h2>Your channel</h2>
     <p>Mahsa Arabzadeh</p>
   </div>
 </div>
 
 <mat-nav-list>
-  <a mat-list-item *ngFor="let item of menuItems()">
-    <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-    <span matListItemTitle>{{ item.label }}</span>
+  <a
+    class="menu-item"
+    mat-list-item
+    *ngFor="let item of menuItems()"
+    [routerLink]="item.route"
+    routerLinkActive="selected-menu-item"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive"
+  >
+    <mat-icon
+      [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+      matListItemIcon
+      >{{ item.icon }}</mat-icon
+    >
+    <span matListItemTitle *ngIf="!slideNavCollapsed()">{{ item.label }}</span>
   </a>
 </mat-nav-list>

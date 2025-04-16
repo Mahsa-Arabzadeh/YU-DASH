@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -26,4 +26,7 @@ import { CustomSidenavComponent } from './components/custom-sidenav/custom-siden
 })
 export class AppComponent {
   title = 'Yu-dash';
+  collapsed = signal(false);
+
+  sidenavComputed = computed(() => (this.collapsed() ? '65px' : '250px'));
 }

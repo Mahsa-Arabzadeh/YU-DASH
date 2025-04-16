@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, Input, input, signal } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { navData } from '../../data/navData';
 
 import { MenuItemType } from '../../types/menu-list.type';
@@ -10,10 +11,16 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-custom-sidenav',
   standalone: true,
-  imports: [MatListModule, MatIconModule, CommonModule],
+  imports: [MatListModule, MatIconModule, CommonModule, RouterModule],
   templateUrl: './custom-sidenav.component.html',
   styleUrl: './custom-sidenav.component.css',
 })
 export class CustomSidenavComponent {
   menuItems = input<MenuItemType[]>(navData);
+  slideNavCollapsed = signal(false);
+  @Input() set collapsed(val: boolean) {
+    this.slideNavCollapsed.set(val);
+  }
+
+  profilePicSize = computed(() => (this.slideNavCollapsed() ? '32' : '100'));
 }
