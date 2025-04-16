@@ -7,11 +7,12 @@ import { MenuItemType } from '../../types/menu-list.type';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { MenuItemComponent } from "../menu-item/menu-item.component";
 
 @Component({
   selector: 'app-custom-sidenav',
   standalone: true,
-  imports: [MatListModule, MatIconModule, CommonModule, RouterModule],
+  imports: [MatListModule, MatIconModule, CommonModule, RouterModule, MenuItemComponent],
   templateUrl: './custom-sidenav.component.html',
   styleUrl: './custom-sidenav.component.css',
 })

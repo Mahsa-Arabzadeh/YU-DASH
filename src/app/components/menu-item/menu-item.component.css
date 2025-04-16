@@ -1,0 +1,17 @@
+.selected-menu-item {
+  border-left-color: var(--primary-color) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+:host * {
+  transition: all 500ms ease-in-out;
+}
+
+.menu-item {
+  border-left: 5px solid;
+  border-left-color: rgba(0, 0, 0, 0);
+}
+
+.indented {
+  --mat-list-list-item-leading-icon-start-space: 48px;
+}

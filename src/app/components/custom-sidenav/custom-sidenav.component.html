@@ -12,20 +12,9 @@
 </div>
 
 <mat-nav-list>
-  <a
-    class="menu-item"
-    mat-list-item
+  <app-menu-item
+    [item]="item"
+    [collapsed]="slideNavCollapsed()"
     *ngFor="let item of menuItems()"
-    [routerLink]="item.route"
-    routerLinkActive="selected-menu-item"
-    #rla="routerLinkActive"
-    [activated]="rla.isActive"
-  >
-    <mat-icon
-      [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
-      matListItemIcon
-      >{{ item.icon }}</mat-icon
-    >
-    <span matListItemTitle *ngIf="!slideNavCollapsed()">{{ item.label }}</span>
-  </a>
+  ></app-menu-item>
 </mat-nav-list>
