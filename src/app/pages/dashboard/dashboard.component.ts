@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { WidgetComponent } from '../../components/widget/widget.component';
 import { DashboardService } from '../../services/dashboard.service';
 import { WidgetType } from '../../models/dashboard';
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [WidgetComponent],
+  imports: [WidgetComponent, MatIcon, MatButtonModule],
   providers: [DashboardService],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
