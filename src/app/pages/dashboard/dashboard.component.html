@@ -1,5 +1,7 @@
 <h1>Channel Dashboard</h1>
 
-@for (w of widgets; track w.id) {
-<app-widget [data]="w" />
-}
+<div class="dashboard-widgets">
+  @for (w of widgets; track w.id) {
+  <app-widget [data]="w" />
+  }
+</div>

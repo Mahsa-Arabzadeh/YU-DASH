@@ -1,11 +1,12 @@
 import { Component, input } from '@angular/core';
+import { NgComponentOutlet } from '@angular/common';
 
 // models:
 import { type WidgetType } from '../../models/dashboard';
 
 @Component({
   selector: 'app-widget',
-  imports: [],
+  imports: [NgComponentOutlet],
   templateUrl: './widget.component.html',
   styleUrl: './widget.component.css',
 })
