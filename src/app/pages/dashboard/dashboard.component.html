@@ -1,13 +1,25 @@
 <div class="header">
   <h1>Channel Dashboard</h1>
-  <button style="color: #005bb1" mat-raised-button>
+  <button
+    style="color: #005bb1"
+    mat-raised-button
+    [mat-menu-trigger-for]="widgetMenu"
+  >
     <mat-icon>add_circle</mat-icon>
     Add Widget
   </button>
+
+  <mat-menu #widgetMenu="matMenu">
+    @for (w of addedWidgets; track w.id) {
+    <button mat-menu-item>
+      {{ w.label }}
+    </button>
+    }
+  </mat-menu>
 </div>
 
 <div class="dashboard-widgets">
-  @for (w of widgets; track w.id) {
+  @for (w of addedWidgets; track w.id) {
   <app-widget [data]="w" />
   }
 </div>
