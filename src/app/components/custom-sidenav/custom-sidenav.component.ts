@@ -2,17 +2,23 @@ import { Component, computed, Input, input, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { navData } from '../../data/navData';
 
-import { MenuItemType } from '../../types/menu-list.type';
+import { MenuItemType } from '../../models/menu-list.type';
 
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { MenuItemComponent } from "../menu-item/menu-item.component";
+import { MenuItemComponent } from '../menu-item/menu-item.component';
 
 @Component({
   selector: 'app-custom-sidenav',
   standalone: true,
-  imports: [MatListModule, MatIconModule, CommonModule, RouterModule, MenuItemComponent],
+  imports: [
+    MatListModule,
+    MatIconModule,
+    CommonModule,
+    RouterModule,
+    MenuItemComponent,
+  ],
   templateUrl: './custom-sidenav.component.html',
   styleUrl: './custom-sidenav.component.css',
 })

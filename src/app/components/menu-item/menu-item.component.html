@@ -24,11 +24,12 @@
   </span>
 </a>
 
-<div *ngIf="item().subItems && nestedMenuOpen()">
+<div @expandContractMenu *ngIf="item().subItems && nestedMenuOpen()">
   <a
     *ngFor="let subItem of item().subItems"
     class="menu-item indented"
     mat-list-item
+    [class.indented]="!collapsed()"
     [routerLink]="item().route + '/' + subItem.route"
     routerLinkActive
     #rla="routerLinkActive"
