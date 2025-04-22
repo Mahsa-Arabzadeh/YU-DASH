@@ -3,13 +3,20 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strict": false,
+    "resolveJsonModule": true,
+    "lib": ["es2020", "dom"],
     "outDir": "./out-tsc/spec",
-    "types": [
-      "jasmine"
-    ]
+    "module": "commonjs",
+    "target": "es2015",
+    "types": ["jest", "node"],
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
+  "esModuleInterop": true,
+  "emitDecoratorMetadata": true,
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts", "src/**/*.ts"]
 }

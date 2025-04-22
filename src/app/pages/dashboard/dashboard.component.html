@@ -3,15 +3,15 @@
   <button
     style="color: #005bb1"
     mat-raised-button
-    [mat-menu-trigger-for]="widgetMenu"
+    [matMenuTriggerFor]="widgetMenu"
   >
     <mat-icon>add_circle</mat-icon>
     Add Widget
   </button>
 
   <mat-menu #widgetMenu="matMenu">
-    @for (w of addedWidgets; track w.id) {
-    <button mat-menu-item>
+    @for (w of widgetsToAdd; track w.id) {
+    <button mat-menu-item (click)="addWidget(w)">
       {{ w.label }}
     </button>
     }
