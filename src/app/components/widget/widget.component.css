@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+h3 {
+  margin: 0;
+}
+
 .settings-button {
   position: absolute;
   top: 20px;

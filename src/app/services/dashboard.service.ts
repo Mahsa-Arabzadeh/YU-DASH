@@ -4,7 +4,7 @@ import { ViewsComponent } from '../pages/dashboard/widgets/views/views.component
 import { WidgetType } from '../models/dashboard.model';
 import { WatchTimeComponent } from '../pages/dashboard/widgets/watch-time/watch-time.component';
 import { RevenueComponent } from '../pages/dashboard/widgets/revenue/revenue.component';
-import { AnalitycsComponent } from '../pages/analitycs/analitycs.component';
+import { AnalyticsComponent } from '../pages/dashboard/widgets/analytics/analitycs.component';
 
 @Injectable({
   providedIn: 'root',
@@ -50,7 +50,7 @@ export class DashboardService {
     {
       id: 5,
       label: 'Channel Analytics',
-      content: AnalitycsComponent,
+      content: AnalyticsComponent,
       rows: 2,
       columns: 2,
     },
