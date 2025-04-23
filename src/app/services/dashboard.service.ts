@@ -5,6 +5,8 @@ import { WidgetType } from '../models/dashboard.model';
 import { WatchTimeComponent } from '../pages/dashboard/widgets/watch-time/watch-time.component';
 import { RevenueComponent } from '../pages/dashboard/widgets/revenue/revenue.component';
 import { AnalyticsComponent } from '../pages/dashboard/widgets/analytics/analitycs.component';
+import { TrafficSourcesComponent } from '../pages/dashboard/widgets/traffic-sources/traffic-sources.component';
+import { UserDataComponent } from '../pages/dashboard/widgets/user-data/user-data.component';
 
 @Injectable({
   providedIn: 'root',
@@ -53,6 +55,20 @@ export class DashboardService {
       content: AnalyticsComponent,
       rows: 2,
       columns: 2,
+    },
+    {
+      id: 6,
+      label: 'Traffic Sources',
+      content: TrafficSourcesComponent,
+      rows: 2,
+      columns: 1,
+    },
+    {
+      id: 7,
+      label: 'User Data',
+      content: UserDataComponent,
+      rows: 2,
+      columns: 1,
     },
   ]);
 

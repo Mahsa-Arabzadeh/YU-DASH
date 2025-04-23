@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, viewChild } from '@angular/core';
+import { Component, ElementRef, input, OnInit, viewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import Chart from 'chart.js/auto';
 

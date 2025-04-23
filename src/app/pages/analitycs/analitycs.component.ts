@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-analitycs',
   imports: [],
   templateUrl: './analitycs.component.html',
-  styleUrl: './analitycs.component.css'
+  styleUrl: './analitycs.component.css',
 })
-export class AnalitycsComponent {
-
-}
+export class AnalitycsComponent {}

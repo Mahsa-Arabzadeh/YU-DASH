@@ -1,0 +1,16 @@
+<div class="user-widget">
+  <p-table [value]="users">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Website</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td style="padding: 2px">{{ user.name }}</td>
+        <td>{{ user.website }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
