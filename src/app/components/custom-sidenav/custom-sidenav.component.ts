@@ -2,7 +2,7 @@ import { Component, computed, Input, input, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { navData } from '../../data/navData';
 
-import { MenuItemType } from '../../models/menu-list.type';
+import { MenuItemType } from '../../models/menu-list.type.model';
 
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';

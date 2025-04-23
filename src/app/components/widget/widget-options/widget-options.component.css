@@ -1,0 +1,53 @@
+:host {
+  position: absolute;
+  z-index: 2;
+  background-color: whitesmoke;
+  color: #000;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --mat-standard-button-toggle-height: 16px;
+  > div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+    > * {
+      border-radius: 7px;
+    }
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.move-forward-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+}
+
+.move-backward-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -5px;
+}
+
+.remove-widget {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--primary-color);
+}

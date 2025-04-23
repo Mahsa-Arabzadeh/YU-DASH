@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 // types
-import { type MenuItemType } from '../../models/menu-list.type';
+import { type MenuItemType } from '../../models/menu-list.type.model';
 
 // Angular animation:
 import { trigger, transition, style, animate } from '@angular/animations';

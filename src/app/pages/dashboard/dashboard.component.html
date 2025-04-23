@@ -14,11 +14,13 @@
     <button mat-menu-item (click)="addWidget(w)">
       {{ w.label }}
     </button>
+    } @empty {
+    <button mat-menu-item>No Widget to add.</button>
     }
   </mat-menu>
 </div>
 
-<div class="dashboard-widgets">
+<div #dashboard class="dashboard-widgets">
   @for (w of addedWidgets; track w.id) {
   <app-widget [data]="w" />
   }
