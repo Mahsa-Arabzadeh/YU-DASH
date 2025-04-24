@@ -37,7 +37,10 @@ export const routes: Routes = [
   },
   {
     path: 'analytics',
-    component: AnalitycsComponent,
+    loadComponent: () =>
+      import('./pages/analitycs/analitycs.component').then(
+        (m) => m.AnalitycsComponent
+      ),
   },
   {
     path: 'comments',
