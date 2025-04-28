@@ -15,18 +15,20 @@
   </mat-menu>
 </div>
 
-@for (data of widgetData; track data.id) {
-<app-widget-container
-  [label]="data.label"
-  [color]="data.color"
-  [backgroundColor]="data.backgroundColor"
->
-  <app-widget
-    [interaction]="data.interaction"
-    [progress]="data.progress"
-    [iconType]="data.iconType"
-  ></app-widget>
-</app-widget-container>
-}
-
-<div #dashboard class="dashboard-widgets"></div>
+<div #dashboard class="dashboard-widgets">
+  @for (data of widgetData; track data.id) {
+  <app-widget-container
+    [label]="data.label"
+    [color]="data.color"
+    [backgroundColor]="data.backgroundColor"
+    [columns]="data.columns"
+    [rows]="data.rows"
+  >
+    <app-widget
+      [interaction]="data.interaction"
+      [progress]="data.progress"
+      [iconType]="data.iconType"
+    ></app-widget>
+  </app-widget-container>
+  }
+</div>

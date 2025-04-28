@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
@@ -9,18 +9,19 @@ import { MatIcon } from '@angular/material/icon';
   templateUrl: './widget.component.html',
   styleUrl: './widget.component.css',
 })
-export class WidgetContainerComponent {
-  //   data = input.required<WidgetType>();
+export class WidgetContainerComponent implements OnInit {
   //   showOptions = signal(false);
-  //   constructor(private host: ElementRef) {}
-  //   ngOnInit(): void {
-  //     const gridArea = `span ${this.data().rows ?? 1} / span ${
-  //       this.data().columns ?? 1
-  //     }`;
-  //     this.host.nativeElement.style.gridArea = gridArea;
-  //   }
 
   @Input() label: string = '';
   @Input() backgroundColor: string = '';
   @Input() color: string = '';
+  @Input() rows: number = 1;
+  @Input() columns: number = 1;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnInit(): void {
+    const gridArea = `span ${this.rows ?? 1} / span ${this.columns ?? 1}`;
+    this.el.nativeElement.style.gridArea = gridArea;
+  }
 }

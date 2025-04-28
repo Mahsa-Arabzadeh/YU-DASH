@@ -1,8 +1,8 @@
 export interface WidgetType {
   id: string;
   label: string;
-  rows: string;
-  columns: string;
+  rows: number;
+  columns: number;
   backgroundColor: string;
   color: string;
   progress: number;
