@@ -1,33 +1,26 @@
-import { Component, ElementRef, input, OnInit, signal } from '@angular/core';
-import { NgComponentOutlet } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-// models:
-import { type WidgetType } from '../../models/dashboard.model';
-import { WidgetOptionsComponent } from './widget-options/widget-options.component';
 
 @Component({
-  selector: 'app-widget',
-  imports: [
-    NgComponentOutlet,
-    MatButtonModule,
-    MatIcon,
-    WidgetOptionsComponent,
-  ],
+  selector: 'app-widget-container',
+  imports: [MatButtonModule, MatIcon],
   templateUrl: './widget.component.html',
   styleUrl: './widget.component.css',
 })
-export class WidgetComponent implements OnInit {
-  data = input.required<WidgetType>();
-  showOptions = signal(false);
+export class WidgetContainerComponent {
+  //   data = input.required<WidgetType>();
+  //   showOptions = signal(false);
+  //   constructor(private host: ElementRef) {}
+  //   ngOnInit(): void {
+  //     const gridArea = `span ${this.data().rows ?? 1} / span ${
+  //       this.data().columns ?? 1
+  //     }`;
+  //     this.host.nativeElement.style.gridArea = gridArea;
+  //   }
 
-  constructor(private host: ElementRef) {}
-
-  ngOnInit(): void {
-    const gridArea = `span ${this.data().rows ?? 1} / span ${
-      this.data().columns ?? 1
-    }`;
-    this.host.nativeElement.style.gridArea = gridArea;
-  }
+  @Input() label: string = '';
+  @Input() backgroundColor: string = '';
+  @Input() color: string = '';
 }

@@ -1,11 +1,11 @@
-import { Type } from '@angular/core';
-
 export interface WidgetType {
-  id: number;
+  id: string;
   label: string;
-  content: Type<unknown>;
-  rows?: number;
-  columns?: number;
-  backgroundColor?: string;
-  color?: string;
+  rows: string;
+  columns: string;
+  backgroundColor: string;
+  color: string;
+  progress: number;
+  interaction: number;
+  iconType: string;
 }

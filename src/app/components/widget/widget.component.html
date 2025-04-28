@@ -1,9 +1,9 @@
 <div
   class="container mat-elevation-z2"
-  [style.background-color]="data().backgroundColor ?? 'white'"
-  [style.color]="data().color ?? 'inherit'"
+  [style.background]="backgroundColor"
+  [style.color]="color"
 >
-  <h3 class="m-0">{{ data().label }}</h3>
+  <!-- <h3 class="m-0">{{ data().label }}</h3>
   <button
     mat-icon-button
     class="settings-button"
@@ -11,13 +11,19 @@
     [style.--mdc-icon-button-icon-color]="data().color ?? 'inherit'"
   >
     <mat-icon>settings</mat-icon>
-  </button>
-  <ng-container [ngComponentOutlet]="data().content"></ng-container>
+  </button> -->
 
-  @if(showOptions()){
+  <h3 class="m-0">{{ label }}</h3>
+  <button mat-icon-button class="settings-button">
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <ng-content></ng-content>
+
+  <!-- @if(showOptions()){
   <app-widget-options
     [data]="data()"
     [(showOptions)]="showOptions"
   ></app-widget-options>
-  }
+  } -->
 </div>

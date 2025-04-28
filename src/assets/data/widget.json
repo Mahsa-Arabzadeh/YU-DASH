@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "label": "Subscribers",
+    "progress": "25000",
+    "interaction": "34000",
+    "rows": "1",
+    "columns": "1",
+    "backgroundColor": "#003F5C",
+    "color": "whitesmoke",
+    "iconType": "check_circle"
+  },
+  {
+    "id": "2",
+    "label": "Views",
+    "rows": "1",
+    "columns": "1",
+    "progress": "23000",
+    "interaction": "450000",
+    "backgroundColor": "#003F5C",
+    "color": "whitesmoke",
+    "iconType": "check_circle"
+  },
+  {
+    "id": "3",
+    "label": "Watch Time",
+    "rows": "1",
+    "columns": "1",
+    "progress": "2334000",
+    "interaction": "670000",
+    "backgroundColor": "#003F5C",
+    "color": "whitesmoke",
+    "iconType": "check_circle"
+  }
+]

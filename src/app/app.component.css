@@ -5,6 +5,8 @@
 mat-toolbar {
   z-index: 5;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 mat-sidenav-container {

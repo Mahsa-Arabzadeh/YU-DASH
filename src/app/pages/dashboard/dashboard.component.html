@@ -10,18 +10,23 @@
   </button>
 
   <mat-menu #widgetMenu="matMenu">
-    @for (w of widgetsToAdd; track w.id) {
-    <button mat-menu-item (click)="addWidget(w)">
-      {{ w.label }}
-    </button>
-    } @empty {
+    <button mat-menu-item></button>
     <button mat-menu-item>No Widget to add.</button>
-    }
   </mat-menu>
 </div>
 
-<div #dashboard class="dashboard-widgets">
-  @for (w of addedWidgets; track w.id) {
-  <app-widget [data]="w" />
-  }
-</div>
+@for (data of widgetData; track data.id) {
+<app-widget-container
+  [label]="data.label"
+  [color]="data.color"
+  [backgroundColor]="data.backgroundColor"
+>
+  <app-widget
+    [interaction]="data.interaction"
+    [progress]="data.progress"
+    [iconType]="data.iconType"
+  ></app-widget>
+</app-widget-container>
+}
+
+<div #dashboard class="dashboard-widgets"></div>

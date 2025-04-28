@@ -1,6 +1,6 @@
 import { Component, computed, Input, input, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { navData } from '../../data/navData';
+import { navData } from '../../../assets/data/navData';
 
 import { MenuItemType } from '../../models/menu-list.type.model';
 

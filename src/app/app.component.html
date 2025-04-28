@@ -2,6 +2,13 @@
   <button (click)="collapsed.set(!collapsed())" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
+  <button mat-icon-button (click)="darkMode.set(!darkMode())">
+    @if (darkMode()) {
+    <mat-icon>light_mode</mat-icon>
+    }@else {
+    <mat-icon>dark_mode</mat-icon>
+    }
+  </button>
 </mat-toolbar>
 
 <mat-sidenav-container>

@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -27,6 +27,11 @@ import { CustomSidenavComponent } from './components/custom-sidenav/custom-siden
 export class AppComponent {
   title = 'Yu-dash';
   collapsed = signal(false);
+  darkMode = signal(false);
+
+  setDarkMode = effect(() => {
+    document.documentElement.classList.toggle('dark', this.darkMode());
+  });
 
   sidenavComputed = computed(() => (this.collapsed() ? '65px' : '250px'));
 }
