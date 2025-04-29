@@ -57,9 +57,4 @@ export class DashboardComponent implements OnInit {
 
     this.widgetDataService.getWidgetData();
   }
-
-  // func for get remove func from service
-  removeWidget(id: string) {
-    this.widgetDataService.removeWidget(id);
-  }
 }

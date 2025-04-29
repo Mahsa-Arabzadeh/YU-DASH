@@ -18,6 +18,7 @@ export class WidgetContainerComponent implements OnInit {
   @Input() color: string = '';
   @Input() rows: number = 1;
   @Input() columns: number = 1;
+  @Input() id: string = '';
 
   constructor(private el: ElementRef) {}
 

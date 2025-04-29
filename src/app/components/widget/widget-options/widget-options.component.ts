@@ -1,6 +1,7 @@
-import { Component, inject, Input, input, model } from '@angular/core';
+import { Component, inject, Input, input, model, OnInit } from '@angular/core';
 
 import { ButtonModule } from 'primeng/button';
+import { WidgetDataService } from '../../../services/widget-data.service';
 
 @Component({
   selector: 'app-widget-options',
@@ -11,4 +12,12 @@ import { ButtonModule } from 'primeng/button';
 export class WidgetOptionsComponent {
   //   data = input.required<WidgetType>();
   showOptions = model<Boolean>(false);
+  @Input() id: string = '';
+
+  constructor(private widgetDataService: WidgetDataService) {}
+
+  // func for get remove func from service
+  removeWidget(id: string) {
+    this.widgetDataService.removeWidget(id);
+  }
 }

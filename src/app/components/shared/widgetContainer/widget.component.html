@@ -25,6 +25,9 @@
   <ng-content></ng-content>
 
   @if (showOptions()) {
-  <app-widget-options [(showOptions)]="showOptions"></app-widget-options>
+  <app-widget-options
+    [id]="id"
+    [(showOptions)]="showOptions"
+  ></app-widget-options>
   }
 </div>
