@@ -1,19 +1,14 @@
-// import { Component, inject, input, model } from '@angular/core';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatIcon } from '@angular/material/icon';
-// import { MatButtonToggleModule } from '@angular/material/button-toggle';
-// import { WidgetType } from '../../../models/dashboard.model';
-// import { DashboardService } from '../../../services/dashboard.service';
+import { Component, inject, Input, input, model } from '@angular/core';
 
-// @Component({
-//   selector: 'app-widget-options',
-//   imports: [MatButtonModule, MatIcon, MatButtonToggleModule],
-//   templateUrl: './widget-options.component.html',
-//   styleUrl: './widget-options.component.css',
-// })
-// export class WidgetOptionsComponent {
-//   data = input.required<WidgetType>();
-//   showOptions = model<Boolean>(false);
+import { ButtonModule } from 'primeng/button';
 
-//   store = inject(DashboardService);
-// }
+@Component({
+  selector: 'app-widget-options',
+  imports: [ButtonModule],
+  templateUrl: './widget-options.component.html',
+  styleUrl: './widget-options.component.css',
+})
+export class WidgetOptionsComponent {
+  //   data = input.required<WidgetType>();
+  showOptions = model<Boolean>(false);
+}

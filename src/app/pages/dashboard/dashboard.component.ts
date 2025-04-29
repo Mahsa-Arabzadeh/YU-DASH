@@ -1,15 +1,14 @@
 import { Component, ElementRef, OnInit, viewChild } from '@angular/core';
 // import { WidgetComponent } from '../../components/widget/widget.component';
-import { DashboardService } from '../../services/dashboard.service';
 import { WidgetType } from '../../models/dashboard.model';
 import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { wrapGrid } from 'animate-css-grid';
-import { WidgetContainerComponent } from '../../components/widget/widget.component';
+import { WidgetContainerComponent } from '../../components/shared/widgetContainer/widget.component';
 import { WidgetDataService } from '../../services/widget-data.service';
-import { WidgetComponent } from '../../components/shared/widget/widget.component';
+import { WidgetComponent } from '../../components/widget/widget.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +24,8 @@ import { WidgetComponent } from '../../components/shared/widget/widget.component
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent implements OnInit {
-  // widgets: WidgetType[] = [];
+  widgetData: WidgetType[] = [];
+
   // addedWidgets: WidgetType[] = [];
   // widgetsToAdd: WidgetType[] = [];
   // dashboard = viewChild.required<ElementRef>('dashboard');
@@ -48,14 +48,18 @@ export class DashboardComponent implements OnInit {
   //   this.refreshWidgets();
   // }
 
-  widgetData: WidgetType[] = [];
-
   constructor(private widgetDataService: WidgetDataService) {}
 
-  ngOnInit() {
-    this.widgetDataService.getWidgetData().subscribe((res) => {
+  ngOnInit(): void {
+    this.widgetDataService.widgetData$.subscribe((res) => {
       this.widgetData = res;
-      console.log(this.widgetData);
     });
+
+    this.widgetDataService.getWidgetData();
+  }
+
+  // func for get remove func from service
+  removeWidget(id: string) {
+    this.widgetDataService.removeWidget(id);
   }
 }

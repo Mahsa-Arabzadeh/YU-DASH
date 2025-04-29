@@ -1,6 +1,9 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
+// primeng icons
+@import "primeicons/primeicons.css";
+
 html {
   --sys-primary: rgb(65 95 145);
   --sys-surface-tint: rgb(65 95 145);

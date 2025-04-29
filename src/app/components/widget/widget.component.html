@@ -1,29 +1,10 @@
-<div
-  class="container mat-elevation-z2"
-  [style.background]="backgroundColor"
-  [style.color]="color"
->
-  <!-- <h3 class="m-0">{{ data().label }}</h3>
-  <button
-    mat-icon-button
-    class="settings-button"
-    (click)="showOptions.set(true)"
-    [style.--mdc-icon-button-icon-color]="data().color ?? 'inherit'"
-  >
-    <mat-icon>settings</mat-icon>
-  </button> -->
+<div>
+  <div class="row mb-8 mt-8">
+    <p class="stat">{{ interaction }}</p>
+    <mat-icon class="text-green">{{ iconType }}</mat-icon>
+  </div>
 
-  <h3 class="m-0">{{ label }}</h3>
-  <button mat-icon-button class="settings-button">
-    <mat-icon>settings</mat-icon>
-  </button>
-
-  <ng-content></ng-content>
-
-  <!-- @if(showOptions()){
-  <app-widget-options
-    [data]="data()"
-    [(showOptions)]="showOptions"
-  ></app-widget-options>
-  } -->
+  <div class="text-dim-gray stat-subtext">
+    <span class="text-green">{{ progress }}</span> in the last 28 days
+  </div>
 </div>

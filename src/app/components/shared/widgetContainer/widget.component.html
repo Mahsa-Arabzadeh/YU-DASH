@@ -1,0 +1,30 @@
+<div
+  class="container mat-elevation-z2"
+  [style.background]="backgroundColor"
+  [style.color]="color"
+>
+  <!-- <h3 class="m-0">{{ data().label }}</h3>
+  <button
+    mat-icon-button
+    class="settings-button"
+    (click)="showOptions.set(true)"
+    [style.--mdc-icon-button-icon-color]="data().color ?? 'inherit'"
+  >
+    <mat-icon>settings</mat-icon>
+  </button> -->
+
+  <h3 class="m-0">{{ label }}</h3>
+  <button
+    mat-icon-button
+    class="settings-button"
+    (click)="showOptions.set(true)"
+  >
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <ng-content></ng-content>
+
+  @if (showOptions()) {
+  <app-widget-options [(showOptions)]="showOptions"></app-widget-options>
+  }
+</div>

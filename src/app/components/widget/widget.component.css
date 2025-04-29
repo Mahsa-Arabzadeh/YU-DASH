@@ -1,24 +1,21 @@
-:host {
-  display: block;
-  border-radius: 16px;
-}
-
-.container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  padding: 32px;
-  box-sizing: border-box;
-  border-radius: inherit;
-  overflow: hidden;
-}
-
-h3 {
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   margin: 0;
 }
 
-.settings-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.text-green {
+  color: green;
+}
+
+.stat {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.stat-subtext {
+  line-height: 0px;
+  color: gray;
+  font-weight: bold;
 }

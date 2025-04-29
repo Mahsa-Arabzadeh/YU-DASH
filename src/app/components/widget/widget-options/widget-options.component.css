@@ -16,9 +16,12 @@
   --mat-standard-button-toggle-height: 16px;
   > div {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
-    margin-bottom: 8px;
+    flex-direction: column;
+    width: inherit;
+    height: inherit;
+    padding: 32px;
     > * {
       border-radius: 7px;
     }
@@ -26,9 +29,9 @@
 }
 
 .close-button {
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .move-forward-button {
