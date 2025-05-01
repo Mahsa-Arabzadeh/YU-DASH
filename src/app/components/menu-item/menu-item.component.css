@@ -1,5 +1,4 @@
 .selected-menu-item {
-  border-left-color: var(--primary-color) !important;
   background: rgba(0, 0, 0, 0.05) !important;
 }
 

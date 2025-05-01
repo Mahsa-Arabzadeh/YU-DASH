@@ -1,6 +1,7 @@
 :host {
   display: block;
   border-radius: 16px;
+  max-width: 47vw;
 }
 
 .container {

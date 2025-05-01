@@ -1,17 +1,17 @@
 <div class="header">
   <h1>Channel Dashboard</h1>
-  <button
-    style="color: #005bb1"
-    mat-raised-button
-    [matMenuTriggerFor]="widgetMenu"
-  >
+
+  <button mat-raised-button [matMenuTriggerFor]="widgetMenu">
     <mat-icon>add_circle</mat-icon>
     Add Widget
   </button>
 
   <mat-menu #widgetMenu="matMenu">
-    <button mat-menu-item></button>
+    @for (item of availableWidgets; track item.id) {
+    <button mat-menu-item (click)="addWidget(item)">{{ item.label }}</button>
+    } @empty {
     <button mat-menu-item>No Widget to add.</button>
+    }
   </mat-menu>
 </div>
 
@@ -31,5 +31,7 @@
       [iconType]="data.iconType"
     ></app-widget>
   </app-widget-container>
+  } @empty {
+  <span>Dashboard widgets were deleted :))</span>
   }
 </div>

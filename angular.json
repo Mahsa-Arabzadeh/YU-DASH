@@ -26,7 +26,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/styles.css", "src/app/styles/custom-theme.scss"],
+            "styles": [
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
