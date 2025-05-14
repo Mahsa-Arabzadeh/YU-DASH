@@ -1,0 +1,14 @@
+<ul class="list">
+  @for (user of users; track user.id ) {
+  <a
+    class="list-link"
+    [routerLink]="['/userDetails']"
+    [queryParams]="{ id: user.id, name: user.name, email: user.email }"
+  >
+    <li class="list-li">
+      <span>{{ user.name }} - </span>
+      <span>{{ user.email }}</span>
+    </li>
+  </a>
+  }
+</ul>

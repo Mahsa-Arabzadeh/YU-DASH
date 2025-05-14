@@ -14,7 +14,7 @@ export class WidgetContainerComponent implements OnInit {
   showOptions = signal(false);
 
   @Input() label: string = '';
-  @Input() backgroundColor: string = '';
+  @Input() backgroundColor?: string = '';
   @Input() color: string = '';
   @Input() rows: number = 1;
   @Input() columns: number = 1;

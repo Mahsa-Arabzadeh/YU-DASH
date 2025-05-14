@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { WidgetContainerComponent } from '../../components/shared/widgetContainer/widget.component';
 import { WidgetComponent } from '../../components/widget/widget.component';
+import { ChartComponent } from '../../components/chart/chart.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,6 +21,7 @@ import { WidgetComponent } from '../../components/widget/widget.component';
     WidgetComponent,
     MatIcon,
     MatIconModule,
+    ChartComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',

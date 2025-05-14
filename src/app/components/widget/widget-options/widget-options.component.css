@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 2;
   background-color: whitesmoke;
-  color: #000;
+  color: #383838;
   top: 0;
   left: 0;
   border-radius: inherit;
@@ -21,7 +21,7 @@
     flex-direction: column;
     width: inherit;
     height: inherit;
-    padding: 32px;
+    padding: 18px;
     > * {
       border-radius: 7px;
     }

@@ -1,11 +1,13 @@
 import { Component, inject, Input, input, model, OnInit } from '@angular/core';
 
-import { ButtonModule } from 'primeng/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 import { WidgetDataService } from '../../../services/widget-data.service';
 
 @Component({
   selector: 'app-widget-options',
-  imports: [ButtonModule],
+  imports: [MatIcon, MatButtonModule],
   templateUrl: './widget-options.component.html',
   styleUrl: './widget-options.component.css',
 })

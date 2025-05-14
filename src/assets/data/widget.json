@@ -2,11 +2,11 @@
   {
     "id": "1",
     "label": "Subscribers",
-    "progress": "25000",
-    "interaction": "34000",
+    "progress": "250",
+    "interaction": "340",
     "rows": "1",
     "columns": "1",
-    "backgroundColor": "#003F5C",
+    "backgroundColor": "#223537",
     "color": "whitesmoke",
     "iconType": "check_circle"
   },
@@ -15,9 +15,9 @@
     "label": "Views",
     "rows": "1",
     "columns": "1",
-    "progress": "23000",
-    "interaction": "450000",
-    "backgroundColor": "#003F5C",
+    "progress": "230",
+    "interaction": "450",
+    "backgroundColor": "#252525",
     "color": "whitesmoke",
     "iconType": "check_circle"
   },
@@ -26,9 +26,9 @@
     "label": "Watch Time",
     "rows": "1",
     "columns": "1",
-    "progress": "2334000",
-    "interaction": "670000",
-    "backgroundColor": "#003F5C",
+    "progress": "270",
+    "interaction": "670",
+    "backgroundColor": "#0c0b0c",
     "color": "whitesmoke",
     "iconType": "check_circle"
   }

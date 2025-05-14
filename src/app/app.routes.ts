@@ -1,21 +1,28 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ContentComponent } from './pages/content/content.component';
-import { AnalitycsComponent } from './pages/analitycs/analitycs.component';
 import { CommentsComponent } from './pages/comments/comments.component';
 import { PlayCircleComponent } from './pages/content/play-circle/play-circle.component';
 import { PostAddComponent } from './pages/content/post-add/post-add.component';
 import { PlaylistPlayComponent } from './pages/content/playlist-play/playlist-play.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { authGuard } from './auth/auth.guard';
+import { UserDetailsComponent } from './pages/analitycs/user-details/user-details.component';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'content',
@@ -42,6 +49,11 @@ export const routes: Routes = [
         (m) => m.AnalitycsComponent
       ),
   },
+  {
+    path: 'userDetails',
+    component: UserDetailsComponent,
+  },
+
   {
     path: 'comments',
     component: CommentsComponent,

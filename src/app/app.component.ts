@@ -1,6 +1,6 @@
 import { Component, computed, effect, signal } from '@angular/core';
 
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { MatIconModule } from '@angular/material/icon';
@@ -28,6 +28,16 @@ export class AppComponent {
   title = 'Yu-dash';
   collapsed = signal(false);
   darkMode = signal(false);
+
+  constructor(private router: Router) {}
+
+  isLogin(): boolean {
+    if (this.router.url === '/login') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   setDarkMode = effect(() => {
     document.documentElement.classList.toggle('dark', this.darkMode());

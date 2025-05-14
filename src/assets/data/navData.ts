@@ -28,7 +28,7 @@ export const navData = [
   },
   {
     icon: 'analytics',
-    label: 'Analytics',
+    label: 'Users Analytics',
     route: 'analytics',
   },
   {

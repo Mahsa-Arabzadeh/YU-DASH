@@ -1,0 +1,17 @@
+<form class="container" [formGroup]="profileForm" (ngSubmit)="handleOnSubmit()">
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" formControlName="email" />
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      autocomplete="12345"
+    />
+  </div>
+
+  <button type="submit">Login</button>
+</form>

@@ -34,4 +34,12 @@
   } @empty {
   <span>Dashboard widgets were deleted :))</span>
   }
+
+  <app-widget-container [columns]="2" [rows]="2">
+    <app-chart [chartType]="'doughnut'"></app-chart>
+  </app-widget-container>
+
+  <app-widget-container [columns]="3" [rows]="2">
+    <app-chart [chartType]="'line'"></app-chart>
+  </app-widget-container>
 </div>

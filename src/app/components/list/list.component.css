@@ -1,0 +1,11 @@
+.list-li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0px;
+}
+
+.list-link {
+  text-decoration: none;
+  color: #222222fa;
+}

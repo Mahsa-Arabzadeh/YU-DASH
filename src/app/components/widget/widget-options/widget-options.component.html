@@ -1,6 +1,4 @@
-<!-- <button mat-icon-button class="close-button" (click)="showOptions.set(false)">
-  <mat-icon>close</mat-icon>
-</button>
+<!-- 
 
 <div>
   Width
@@ -48,22 +46,16 @@
   <mat-icon>chevron_left</mat-icon>
 </button>
 
-<button
-  mat-icon-button
-  class="remove-widget"
-  (click)="store.removeWidget(data().id)"
->
-  <mat-icon>delete</mat-icon>
-</button> -->
+-->
 
 <div>
   <div class="close-button">
-    <p-button (onClick)="removeWidget(id)">
-      <span style="color: #dd3d3d" class="pi pi-trash"></span>
-    </p-button>
+    <button mat-icon-button (click)="removeWidget(id)">
+      <mat-icon>delete</mat-icon>
+    </button>
 
-    <p-button (onClick)="showOptions.set(false)">
-      <span class="pi pi-times"></span>
-    </p-button>
+    <button mat-icon-button (click)="showOptions.set(false)">
+      <mat-icon>close</mat-icon>
+    </button>
   </div>
 </div>
