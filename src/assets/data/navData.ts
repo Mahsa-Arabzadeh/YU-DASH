@@ -32,8 +32,7 @@ export const navData = [
     route: 'analytics',
   },
   {
-    icon: 'comment',
-    label: 'Comments',
-    route: 'comments',
+    icon: 'logout',
+    label: 'log out',
   },
 ];

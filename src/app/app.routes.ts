@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ContentComponent } from './pages/content/content.component';
-import { CommentsComponent } from './pages/comments/comments.component';
 import { PlayCircleComponent } from './pages/content/play-circle/play-circle.component';
 import { PostAddComponent } from './pages/content/post-add/post-add.component';
 import { PlaylistPlayComponent } from './pages/content/playlist-play/playlist-play.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { authGuard } from './auth/auth.guard';
 import { UserDetailsComponent } from './pages/analitycs/user-details/user-details.component';
+import { SignUpComponent } from './components/login/sign-up/sign-up.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +23,10 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
   {
     path: 'content',
@@ -52,10 +56,5 @@ export const routes: Routes = [
   {
     path: 'userDetails',
     component: UserDetailsComponent,
-  },
-
-  {
-    path: 'comments',
-    component: CommentsComponent,
   },
 ];

@@ -5,7 +5,7 @@
   routerLinkActive="selected-menu-item"
   #rla="routerLinkActive"
   [activated]="rla.isActive"
-  (click)="toggleNested()"
+  (click)="item().label === 'log out' ? handleLogOut() : toggleNested()"
 >
   <mat-icon
     [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"

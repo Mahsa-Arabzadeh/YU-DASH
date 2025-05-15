@@ -24,6 +24,7 @@
     "@angular/router": "^19.1.0",
     "@primeng/themes": "^19.1.0",
     "animate-css-grid": "^1.5.1",
+    "bootstrap": "^5.3.6",
     "chart.js": "^4.4.9",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -5,13 +5,11 @@
   </div>
   <div>
     <label for="password">Password: </label>
-    <input
-      id="password"
-      type="password"
-      formControlName="password"
-      autocomplete="12345"
-    />
+    <input id="password" type="password" formControlName="password" />
   </div>
 
   <button type="submit">Login</button>
 </form>
+
+<span>Don't have an account?</span>
+<a [routerLink]="['/signup']">SignUp</a>
