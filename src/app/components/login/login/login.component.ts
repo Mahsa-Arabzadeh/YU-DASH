@@ -10,6 +10,8 @@ import { adminEmail, adminPassword } from '../../../../const/constants';
 import { AuthService } from '../../../services/auth.service';
 import { environment } from '../../../../environments/environment';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-login',
   imports: [
@@ -42,11 +44,17 @@ export class LoginComponent {
     if (this.profileForm.valid) {
       this.authService.logIn(email, password).subscribe({
         next: (user) => {
-          this.authService.saveToken(environment.fakeToken);
+          this.authService.saveToken(user.fakeToken);
           this.router.navigate(['/dashboard']);
         },
-        error: (error) => {
-          alert(error.message);
+        error: () => {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Invalid email or password!',
+            showConfirmButton: false,
+            timer: 1500,
+          });
         },
       });
     }

@@ -58,7 +58,7 @@ export class ChartComponent implements OnInit {
         aspectRatio: 2.5,
         plugins: {
           legend: {
-            position: this.chartType === 'doughnut' ? 'right' : 'top',
+            position: 'bottom',
           },
         },
       },

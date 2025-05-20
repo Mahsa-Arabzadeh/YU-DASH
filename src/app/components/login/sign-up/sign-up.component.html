@@ -1,16 +1,34 @@
+<!-- ------------------- BOOTSTRAP FORM ------------------------ -->
 <form class="container" [formGroup]="signUpForm" (ngSubmit)="handleOnSubmit()">
-  <div>
-    <label for="name">User Name: </label>
-    <input type="text" formControlName="name" />
+  <div class="mb-3">
+    <label for="name" class="form-label">Username </label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      aria-describedby="name"
+      formControlName="name"
+    />
   </div>
-  <div>
-    <label for="email"> Email: </label>
-    <input type="email" formControlName="email" />
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      aria-describedby="email"
+      formControlName="email"
+    />
   </div>
-  <div>
-    <label for="password">Password: </label>
-    <input id="password" type="password" formControlName="password" />
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+    />
   </div>
 
-  <button type="submit">sign up</button>
+  <button type="submit" class="btn btn-primary">Sign up</button>
 </form>

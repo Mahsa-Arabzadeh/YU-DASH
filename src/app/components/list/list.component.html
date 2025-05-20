@@ -1,14 +1,35 @@
-<ul class="list">
-  @for (user of users; track user.id ) {
-  <a
-    class="list-link"
-    [routerLink]="['/userDetails']"
-    [queryParams]="{ id: user.id, name: user.name, email: user.email }"
-  >
-    <li class="list-li">
-      <span>{{ user.name }} - </span>
-      <span>{{ user.email }}</span>
-    </li>
-  </a>
-  }
-</ul>
+<p-table
+  [value]="users"
+  class="p-table"
+  [tableStyle]="{ 'min-width': '50rem' }"
+>
+  <ng-template #header>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Details</th>
+      <th>Delete</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-user>
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <a
+          style="color: green"
+          class="list-link"
+          [routerLink]="['/userDetails']"
+          [queryParams]="{ id: user.id, name: user.name, email: user.email }"
+        >
+          Details
+        </a>
+      </td>
+      <td>
+        <button mat-icon-button (click)="removeUser(user.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

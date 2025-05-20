@@ -1,20 +1,16 @@
 <div class="sidenav-header">
   <img
-    [width]="profilePicSize()"
-    [height]="profilePicSize()"
+    [width]="collapsed ? '32' : '100'"
+    [height]="collapsed ? '32' : '100'"
     src="ChatGPT Image Apr 11, 2025, 11_52_40 PM.png"
     alt="profile"
   />
-  <div class="header-text" [class.hide-header-text]="slideNavCollapsed()">
+  <div class="header-text" [class.hide-header-text]="collapsed">
     <h2>Your channel</h2>
     <p>Mahsa Arabzadeh</p>
   </div>
 </div>
 
 <mat-nav-list>
-  <app-menu-item
-    [item]="item"
-    [collapsed]="slideNavCollapsed()"
-    *ngFor="let item of menuItems()"
-  ></app-menu-item>
+  <app-menu-item [item]="item" *ngFor="let item of menuItems()"></app-menu-item>
 </mat-nav-list>

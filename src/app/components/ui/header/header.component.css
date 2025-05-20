@@ -1,0 +1,10 @@
+:host * {
+  transition: all 500ms ease-in-out !important;
+}
+
+mat-toolbar {
+  z-index: 5;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}

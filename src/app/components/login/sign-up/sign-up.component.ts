@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 
 import { AuthService } from '../../../services/auth.service';
 import { environment } from '../../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +17,8 @@ export class SignUpComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
     this.signUpForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -31,7 +33,8 @@ export class SignUpComponent {
     if (this.signUpForm.valid) {
       this.authService.signUp(name, email, password).subscribe({
         next: (res) => {
-          this.authService.saveToken(environment.fakeToken);
+          this.authService.saveToken(res.fakeToken);
+          this.router.navigate(['/auth/login']);
         },
         error: (error) => {
           alert(error.message);

@@ -1,5 +1,5 @@
-import { Component, computed, Input, input, signal } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { navData } from '../../../assets/data/navData';
 
 import { MenuItemType } from '../../models/menu-list.type.model';
@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { MenuItemComponent } from '../menu-item/menu-item.component';
+import { HandleStateService } from '../../services/handle-state.service';
 
 @Component({
   selector: 'app-custom-sidenav',
@@ -24,10 +25,11 @@ import { MenuItemComponent } from '../menu-item/menu-item.component';
 })
 export class CustomSidenavComponent {
   menuItems = input<MenuItemType[]>(navData);
-  slideNavCollapsed = signal(false);
-  @Input() set collapsed(val: boolean) {
-    this.slideNavCollapsed.set(val);
-  }
+  collapsed = false;
 
-  profilePicSize = computed(() => (this.slideNavCollapsed() ? '32' : '100'));
+  constructor(private handleStateService: HandleStateService) {
+    handleStateService.collapseValue.subscribe((value) => {
+      this.collapsed = value;
+    });
+  }
 }

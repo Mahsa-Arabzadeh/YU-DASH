@@ -1,3 +1,16 @@
-<app-widget-container>
-  <p>{{ userId }} - {{ userName }} - {{ userEmail }}</p>
-</app-widget-container>
+<p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template #header>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-user>
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </ng-template>
+</p-table>

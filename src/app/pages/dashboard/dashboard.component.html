@@ -21,8 +21,6 @@
     [label]="data.label"
     [color]="data.color"
     [backgroundColor]="data.backgroundColor"
-    [columns]="data.columns"
-    [rows]="data.rows"
     [id]="data.id"
   >
     <app-widget
@@ -33,11 +31,15 @@
   </app-widget-container>
   }
 
+  <app-widget-container [label]="'Progress'" [columns]="2" [rows]="2">
+    <app-chart [chartType]="'polarArea'"></app-chart>
+  </app-widget-container>
+
   <app-widget-container [label]="'Interaction'" [columns]="2" [rows]="2">
     <app-chart [chartType]="'doughnut'"></app-chart>
   </app-widget-container>
 
-  <app-widget-container [columns]="3" [rows]="2">
+  <app-widget-container [columns]="4" [rows]="3">
     <app-chart [chartType]="'line'"></app-chart>
   </app-widget-container>
 </div>

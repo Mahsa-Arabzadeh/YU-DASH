@@ -12,7 +12,7 @@
     matListItemIcon
     >{{ item().icon }}</mat-icon
   >
-  <span matListItemTitle *ngIf="!collapsed()">{{ item().label }}</span>
+  <span matListItemTitle *ngIf="!collapsed">{{ item().label }}</span>
 
   <span matListItemMeta *ngIf="item().subItems">
     <mat-icon *ngIf="nestedMenuOpen(); else notNestedMenuOpen"
@@ -29,7 +29,7 @@
     *ngFor="let subItem of item().subItems"
     class="menu-item indented"
     mat-list-item
-    [class.indented]="!collapsed()"
+    [class.indented]="!collapsed"
     [routerLink]="item().route + '/' + subItem.route"
     routerLinkActive
     #rla="routerLinkActive"
@@ -40,6 +40,6 @@
       matListItemIcon
       >{{ subItem.icon }}</mat-icon
     >
-    <span matListItemTitle *ngIf="!collapsed()">{{ subItem.label }}</span>
+    <span matListItemTitle *ngIf="!collapsed">{{ subItem.label }}</span>
   </a>
 </div>

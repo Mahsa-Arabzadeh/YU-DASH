@@ -1,26 +1,6 @@
 @if (!isLogin()) {
-<mat-toolbar class="mat-elevation-z4">
-  <button (click)="collapsed.set(!collapsed())" mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <button mat-icon-button (click)="darkMode.set(!darkMode())">
-    @if (darkMode()) {
-    <mat-icon>dark_mode</mat-icon>
-    }@else {
-    <mat-icon>light_mode</mat-icon>
-    }
-  </button>
-</mat-toolbar>
+<app-dashboard-layout></app-dashboard-layout>
 
-<mat-sidenav-container>
-  <mat-sidenav opened mode="side" [style.width]="sidenavComputed()">
-    <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
-  </mat-sidenav>
-
-  <mat-sidenav-content [style.margin-left]="sidenavComputed()" class="content">
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
 } @else {
-<router-outlet></router-outlet>
+<app-auth-layout></app-auth-layout>
 }

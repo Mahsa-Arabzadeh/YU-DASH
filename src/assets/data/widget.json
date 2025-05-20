@@ -6,7 +6,7 @@
     "interaction": "340",
     "rows": "1",
     "columns": "1",
-    "backgroundColor": "#223537",
+    "backgroundColor": "#85cf49",
     "color": "whitesmoke",
     "iconType": "check_circle"
   },
@@ -17,7 +17,7 @@
     "columns": "1",
     "progress": "230",
     "interaction": "450",
-    "backgroundColor": "#252525",
+    "backgroundColor": "#f290ff",
     "color": "whitesmoke",
     "iconType": "check_circle"
   },
@@ -28,7 +28,18 @@
     "columns": "1",
     "progress": "270",
     "interaction": "670",
-    "backgroundColor": "#0c0b0c",
+    "backgroundColor": "#71ecd8",
+    "color": "whitesmoke",
+    "iconType": "check_circle"
+  },
+  {
+    "id": "4",
+    "label": "Videos",
+    "rows": "1",
+    "columns": "1",
+    "progress": "20",
+    "interaction": "60",
+    "backgroundColor": "#e0de42",
     "color": "whitesmoke",
     "iconType": "check_circle"
   }

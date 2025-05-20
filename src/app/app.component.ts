@@ -1,47 +1,34 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { Router, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { CustomSidenavComponent } from './components/custom-sidenav/custom-sidenav.component';
+import { DashboardLayoutComponent } from './components/layout/dashboard-layout/dashboard-layout.component';
+import { HandleStateService } from './services/handle-state.service';
+import { AuthLayoutComponent } from './components/layout/auth-layout/auth-layout.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    RouterOutlet,
-    MatSidenavModule,
-    CommonModule,
-    CustomSidenavComponent,
-  ],
+  imports: [CommonModule, DashboardLayoutComponent, AuthLayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Yu-dash';
-  collapsed = signal(false);
-  darkMode = signal(false);
+  collapsed = false;
 
-  constructor(private router: Router) {}
-
-  isLogin(): boolean {
-    if (this.router.url === '/login') {
-      return true;
-    } else {
-      return false;
-    }
+  constructor(
+    private router: Router,
+    private handleStateService: HandleStateService
+  ) {
+    handleStateService.collapseValue.subscribe((value) => {
+      this.collapsed = value;
+    });
   }
 
-  setDarkMode = effect(() => {
-    document.documentElement.classList.toggle('dark', this.darkMode());
-  });
-
-  sidenavComputed = computed(() => (this.collapsed() ? '65px' : '250px'));
+  isLogin(): boolean {
+    return (
+      this.router.url === '/auth/login' || this.router.url === '/auth/signup'
+    );
+  }
 }

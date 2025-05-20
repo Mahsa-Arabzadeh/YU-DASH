@@ -1,1 +1,50 @@
-<p>play-circle works!</p>
+<div class="dashboard-widgets">
+  <app-widget-container [columns]="1" [rows]="1">
+    <label>angular-cd-timer: </label>
+    <div>
+      <p-button
+        ><cd-timer
+          [startTime]="100"
+          [endTime]="0"
+          [countdown]="true"
+          [autoStart]="true"
+          format="ms"
+        >
+        </cd-timer>
+      </p-button>
+    </div>
+  </app-widget-container>
+
+  <app-widget-container [columns]="1" [rows]="1">
+    <label>html2canvas: </label>
+    <div id="capture">
+      <h4>element</h4>
+    </div>
+    <div>
+      <p-dialog
+        header="Header"
+        [modal]="true"
+        [(visible)]="visible"
+        [style]="{ width: '50rem' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+        [maximizable]="true"
+      >
+        <img [src]="imageBase" />
+      </p-dialog>
+      <p-button label="Show" (onClick)="handleCapture()"></p-button>
+    </div>
+  </app-widget-container>
+
+  <app-widget-container [columns]="1" [rows]="1">
+    <label>Jalali / moment js: </label>
+    <h4>{{ "2025-05-16" | jalali }}</h4>
+    <h4>{{ "2025-05-16" | momentFormat }}</h4>
+  </app-widget-container>
+
+  <app-widget-container [columns]="1" [rows]="1">
+    <label>JSpdf: </label>
+    <div>
+      <p-button (onClick)="pdfGenerator()">Generate PDF</p-button>
+    </div>
+  </app-widget-container>
+</div>

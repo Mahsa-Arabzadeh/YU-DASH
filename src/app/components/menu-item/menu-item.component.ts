@@ -12,6 +12,7 @@ import { type MenuItemType } from '../../models/menu-list.type.model';
 
 // Angular animation:
 import { trigger, transition, style, animate } from '@angular/animations';
+import { HandleStateService } from '../../services/handle-state.service';
 
 @Component({
   selector: 'app-menu-item',
@@ -33,10 +34,17 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class MenuItemComponent {
   item = input.required<MenuItemType>();
   nestedMenuOpen = signal(false);
-  collapsed = input(false);
+  collapsed = false;
   router = inject(Router);
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private handleStateService: HandleStateService
+  ) {
+    handleStateService.collapseValue.subscribe((value) => {
+      this.collapsed = value;
+    });
+  }
 
   toggleNested() {
     if (!this.item().subItems) {
@@ -47,6 +55,6 @@ export class MenuItemComponent {
 
   handleLogOut() {
     this.authService.removeToken();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/auth/login']);
   }
 }

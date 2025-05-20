@@ -1,3 +1,6 @@
+:host {
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -5,13 +8,10 @@
   margin: 0;
 }
 
-.text-green {
-  color: green;
-}
-
 .stat {
   font-size: 14px;
   font-weight: 900;
+  text-shadow: 1px 1px 1px #5f5f5f7e;
 }
 
 .stat-subtext {

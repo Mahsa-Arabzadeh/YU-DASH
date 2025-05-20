@@ -24,7 +24,6 @@ export class AuthService {
   logIn(email: string, password: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.getToken()}`,
     });
 
     return this.http.get<any[]>(this.apiUrl, { headers }).pipe(
@@ -35,10 +34,10 @@ export class AuthService {
         if (!user) {
           throw new Error('Invalid email or password');
         }
+        this.saveToken(user.fakeToken);
         return user;
       }),
       catchError((error: HttpErrorResponse) => {
-        alert(error);
         throw new Error(error.message);
       })
     );
@@ -49,18 +48,31 @@ export class AuthService {
       'Content-Type': 'application/json',
     });
 
-    const body = {
-      name: name,
-      email: email,
-      password: password,
-    };
+    return this.http
+      .post<any>(
+        this.apiUrl,
+        {
+          name,
+          email,
+          password,
+          fakeToken: this.userToken,
+        },
+        { headers }
+      )
+      .pipe(
+        map((response) => {
+          return response;
+        }),
+        catchError((error: HttpErrorResponse) => {
+          throw new Error(error.message);
+        })
+      );
+  }
 
-    return this.http.post<any>(this.apiUrl, body, { headers }).pipe(
-      map((response) => {
-        return response;
-      }),
+  removeUser(id: string): Observable<string> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<string>(url).pipe(
       catchError((error: HttpErrorResponse) => {
-        alert(error.message);
         throw new Error(error.message);
       })
     );
@@ -78,8 +90,10 @@ export class AuthService {
     return localStorage.removeItem(this.tokenKey);
   }
 
-  isValidUserToken(token: string) {
-    return token === this.userToken;
+  isValidUserToken(token: string): Observable<boolean> {
+    return this.http
+      .get<any[]>(this.apiUrl)
+      .pipe(map((users) => users.find((user) => user.fakeToken === token)));
   }
 
   isLoggedInUser() {

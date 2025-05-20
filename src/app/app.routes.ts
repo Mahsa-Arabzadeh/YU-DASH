@@ -2,18 +2,17 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ContentComponent } from './pages/content/content.component';
 import { PlayCircleComponent } from './pages/content/play-circle/play-circle.component';
-import { PostAddComponent } from './pages/content/post-add/post-add.component';
-import { PlaylistPlayComponent } from './pages/content/playlist-play/playlist-play.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { authGuard } from './auth/auth.guard';
 import { UserDetailsComponent } from './pages/analitycs/user-details/user-details.component';
 import { SignUpComponent } from './components/login/sign-up/sign-up.component';
+import { AuthLayoutComponent } from './components/layout/auth-layout/auth-layout.component';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login',
+    redirectTo: 'auth/login',
   },
   {
     path: 'dashboard',
@@ -21,28 +20,26 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'signup',
-    component: SignUpComponent,
+    path: 'auth',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'signup',
+        component: SignUpComponent,
+      },
+    ],
   },
   {
     path: 'content',
     component: ContentComponent,
     children: [
       {
-        path: 'videos',
+        path: 'package',
         component: PlayCircleComponent,
-      },
-      {
-        path: 'playlists',
-        component: PlaylistPlayComponent,
-      },
-      {
-        path: 'posts',
-        component: PostAddComponent,
       },
     ],
   },

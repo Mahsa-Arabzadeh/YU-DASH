@@ -1,0 +1,12 @@
+<mat-toolbar class="mat-elevation-z4">
+  <button (click)="toggleMenu()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-icon-button (click)="darkMode.set(!darkMode())">
+    @if (darkMode()) {
+    <mat-icon>dark_mode</mat-icon>
+    }@else {
+    <mat-icon>light_mode</mat-icon>
+    }
+  </button>
+</mat-toolbar>

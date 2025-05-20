@@ -1,0 +1,12 @@
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="collapsed ? '65px' : '250px'">
+    <app-custom-sidenav></app-custom-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content
+    [style.margin-left]="collapsed ? '65px' : '250px'"
+    class="content"
+  >
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
