@@ -12,7 +12,6 @@ import { HandleStateService } from '../../services/handle-state.service';
 
 @Component({
   selector: 'app-custom-sidenav',
-  standalone: true,
   imports: [
     MatListModule,
     MatIconModule,

@@ -12,7 +12,6 @@ import { TableModule } from 'primeng/table';
 export class UserDetailsComponent implements OnInit {
   userId: number = 0;
   userName: string | null = '';
-  // userProfile: string | null = '';
   userEmail: string | null = '';
   users: {
     name: string;

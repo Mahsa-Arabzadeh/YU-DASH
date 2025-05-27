@@ -1,7 +1,7 @@
 <a
   class="menu-item"
   mat-list-item
-  [routerLink]="item().route"
+  [routerLink]="item().route === 'content' ? '#' : item().route"
   routerLinkActive="selected-menu-item"
   #rla="routerLinkActive"
   [activated]="rla.isActive"
@@ -30,7 +30,7 @@
     class="menu-item indented"
     mat-list-item
     [class.indented]="!collapsed"
-    [routerLink]="item().route + '/' + subItem.route"
+    [routerLink]="subItem.route"
     routerLinkActive
     #rla="routerLinkActive"
     [activated]="rla.isActive"

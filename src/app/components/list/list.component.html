@@ -22,13 +22,17 @@
           [routerLink]="['/userDetails']"
           [queryParams]="{ id: user.id, name: user.name, email: user.email }"
         >
-          Details
+          <p-button styleClass="p-button-text" label="Details" />
         </a>
       </td>
       <td>
-        <button mat-icon-button (click)="removeUser(user.id)">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <p-button
+          icon="pi pi-trash"
+          [style]="{ color: 'red' }"
+          styleClass="p-button-text"
+          (onClick)="removeUser(user.id)"
+        >
+        </p-button>
       </td>
     </tr>
   </ng-template>

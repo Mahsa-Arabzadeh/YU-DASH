@@ -7,6 +7,7 @@ import { authGuard } from './auth/auth.guard';
 import { UserDetailsComponent } from './pages/analitycs/user-details/user-details.component';
 import { SignUpComponent } from './components/login/sign-up/sign-up.component';
 import { AuthLayoutComponent } from './components/layout/auth-layout/auth-layout.component';
+import { PlayComponent } from './pages/content/editor/play.component';
 
 export const routes: Routes = [
   {
@@ -34,14 +35,12 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'content',
-    component: ContentComponent,
-    children: [
-      {
-        path: 'package',
-        component: PlayCircleComponent,
-      },
-    ],
+    path: 'package',
+    component: PlayCircleComponent,
+  },
+  {
+    path: 'editor',
+    component: PlayComponent,
   },
   {
     path: 'analytics',

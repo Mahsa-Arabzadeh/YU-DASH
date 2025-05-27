@@ -1,39 +1,18 @@
 {
   "users": [
     {
-      "id": "9cca",
-      "name": "admin",
-      "email": "admin@gmail.com",
-      "password": "12345",
-      "fakeToken": "43fasdfiohe2738hyewsiurdhs"
-    },
-    {
-      "id": "c451",
+      "id": "f233",
       "name": "mahsa",
       "email": "arabzadehmah@gmail.com",
       "password": "12345",
-      "fakeToken": "438faskjdf82738hyewsiurdhs"
+      "fakeToken": "fhdsufhoafiuyd83e4598"
     },
     {
-      "id": "5e77",
-      "name": "emma",
-      "email": "emma@gmail.com",
-      "password": "123456",
-      "fakeToken": "43874982738fjsdaliurdhs"
-    },
-    {
-      "id": "540b",
-      "name": "emma",
-      "email": "emma@gmail.com",
-      "password": "123456",
-      "fakeToken": "438749823h4hkyewsiurdhs"
-    },
-    {
-      "id": "a40b",
-      "name": "mahsa ara",
+      "id": "f233",
+      "name": "admin",
       "email": "admin@gmail.com",
-      "password": "3456",
-      "fakeToken": "my-fake-token"
+      "password": "12345",
+      "fakeToken": "fhdsufhoaf340jfsdj83e4598"
     }
   ]
 }

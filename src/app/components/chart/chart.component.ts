@@ -3,6 +3,7 @@ import { WidgetDataService } from '../../services/widget-data.service';
 import { WidgetType } from '../../models/dashboard.model';
 import { Chart, ChartTypeRegistry } from 'chart.js/auto';
 import { LastActivityDateService } from '../../services/last-activity-date.service';
+import { HandleStateService } from '../../services/handle-state.service';
 
 @Component({
   selector: 'app-chart',
@@ -11,14 +12,15 @@ import { LastActivityDateService } from '../../services/last-activity-date.servi
 })
 export class ChartComponent implements OnInit {
   allWidgets: WidgetType[] = [];
-  chart: any;
   @Input() chartType!: keyof ChartTypeRegistry;
+  chart: any;
   @ViewChild('MyChart')
   myChart!: ElementRef<HTMLCanvasElement>;
 
   constructor(
     private widgetDataService: WidgetDataService,
-    private lastActivityDataService: LastActivityDateService
+    private lastActivityDataService: LastActivityDateService,
+    private handleStateService: HandleStateService
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +30,12 @@ export class ChartComponent implements OnInit {
         this.createChart();
       }
     });
+    const existingChart = this.handleStateService.getChart();
+
+    if (existingChart) {
+      this.chart = existingChart;
+      return;
+    }
   }
 
   createChart() {
@@ -36,7 +44,7 @@ export class ChartComponent implements OnInit {
     const progress = this.allWidgets.map((widget) => widget.progress);
     const colors = this.allWidgets.map((widget) => widget.backgroundColor);
 
-    this.chart = new Chart(this.myChart.nativeElement, {
+    const chartInstance = new Chart(this.myChart.nativeElement, {
       type: this.chartType,
       data: {
         labels:
@@ -63,5 +71,8 @@ export class ChartComponent implements OnInit {
         },
       },
     });
+
+    this.chart = chartInstance;
+    this.handleStateService.setChart(chartInstance);
   }
 }

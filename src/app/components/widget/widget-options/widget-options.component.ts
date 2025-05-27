@@ -12,7 +12,6 @@ import { WidgetDataService } from '../../../services/widget-data.service';
   styleUrl: './widget-options.component.css',
 })
 export class WidgetOptionsComponent {
-  //   data = input.required<WidgetType>();
   showOptions = model<Boolean>(false);
   @Input() id: string = '';
 

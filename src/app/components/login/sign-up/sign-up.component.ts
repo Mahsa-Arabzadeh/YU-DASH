@@ -32,8 +32,7 @@ export class SignUpComponent {
 
     if (this.signUpForm.valid) {
       this.authService.signUp(name, email, password).subscribe({
-        next: (res) => {
-          this.authService.saveToken(res.fakeToken);
+        next: () => {
           this.router.navigate(['/auth/login']);
         },
         error: (error) => {

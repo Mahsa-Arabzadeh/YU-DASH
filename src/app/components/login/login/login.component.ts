@@ -43,8 +43,7 @@ export class LoginComponent {
 
     if (this.profileForm.valid) {
       this.authService.logIn(email, password).subscribe({
-        next: (user) => {
-          this.authService.saveToken(user.fakeToken);
+        next: () => {
           this.router.navigate(['/dashboard']);
         },
         error: () => {

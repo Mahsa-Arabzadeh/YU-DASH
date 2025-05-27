@@ -6,6 +6,7 @@ import {
   HttpErrorResponse,
   HttpHeaders,
 } from '@angular/common/http';
+import { type ApiType } from '../models/api.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,16 +18,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  getUserData(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getUserData(): Observable<ApiType[]> {
+    return this.http.get<ApiType[]>(this.apiUrl);
   }
 
-  logIn(email: string, password: string): Observable<any> {
+  logIn(email: string, password: string): Observable<ApiType> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
-    return this.http.get<any[]>(this.apiUrl, { headers }).pipe(
+    return this.http.get<ApiType[]>(this.apiUrl, { headers }).pipe(
       map((users) => {
         const user = users.find(
           (u) => u.email === email && u.password === password
@@ -34,7 +35,7 @@ export class AuthService {
         if (!user) {
           throw new Error('Invalid email or password');
         }
-        this.saveToken(user.fakeToken);
+        localStorage.setItem(this.tokenKey, user.fakeToken);
         return user;
       }),
       catchError((error: HttpErrorResponse) => {
@@ -43,13 +44,13 @@ export class AuthService {
     );
   }
 
-  signUp(name: string, email: string, password: string): Observable<any> {
+  signUp(name: string, email: string, password: string): Observable<ApiType> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
     return this.http
-      .post<any>(
+      .post<ApiType>(
         this.apiUrl,
         {
           name,
@@ -76,10 +77,6 @@ export class AuthService {
         throw new Error(error.message);
       })
     );
-  }
-
-  saveToken(token: string) {
-    return localStorage.setItem(this.tokenKey, token);
   }
 
   getToken(): any {

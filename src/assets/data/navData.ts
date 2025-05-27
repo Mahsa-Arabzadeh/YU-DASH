@@ -14,6 +14,11 @@ export const navData = [
         label: 'Packages',
         route: 'package',
       },
+      {
+        icon: 'play_circle',
+        label: 'Editor',
+        route: 'editor',
+      },
     ],
   },
   {

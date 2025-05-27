@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { MatIcon } from '@angular/material/icon';
-import { MatIconButton } from '@angular/material/button';
 
 import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-list',
-  imports: [MatListModule, MatIconButton, RouterModule, MatIcon, TableModule],
+  imports: [MatListModule, RouterModule, TableModule, ButtonModule],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
 export class ListComponent implements OnInit {
   users: any[] = [];

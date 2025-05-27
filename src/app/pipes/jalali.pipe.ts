@@ -3,7 +3,6 @@ import moment from 'jalali-moment';
 
 @Pipe({
   name: 'jalali',
-  standalone: true,
 })
 export class JalaliPipe implements PipeTransform {
   transform(value: any, args?: any): any {
