@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 import { WidgetDataService } from '../../services/widget-data.service';
 import { WidgetType } from '../../models/dashboard.model';
 import { Chart, ChartTypeRegistry } from 'chart.js/auto';
@@ -10,7 +17,7 @@ import { HandleStateService } from '../../services/handle-state.service';
   templateUrl: './chart.component.html',
   styleUrl: './chart.component.css',
 })
-export class ChartComponent implements OnInit {
+export class ChartComponent implements OnInit, AfterViewInit {
   allWidgets: WidgetType[] = [];
   @Input() chartType!: keyof ChartTypeRegistry;
   chart: any;
@@ -30,11 +37,17 @@ export class ChartComponent implements OnInit {
         this.createChart();
       }
     });
-    const existingChart = this.handleStateService.getChart();
+    // const existingChart = this.handleStateService.getChart();
 
-    if (existingChart) {
-      this.chart = existingChart;
-      return;
+    // if (existingChart) {
+    //   this.chart = existingChart;
+    //   return;
+    // }
+  }
+
+  ngAfterViewInit(): void {
+    if (this.allWidgets.length > 0 && this.myChart) {
+      this.createChart();
     }
   }
 
@@ -73,6 +86,6 @@ export class ChartComponent implements OnInit {
     });
 
     this.chart = chartInstance;
-    this.handleStateService.setChart(chartInstance);
+    // this.handleStateService.setChart(chartInstance);
   }
 }

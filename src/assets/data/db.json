@@ -2,17 +2,17 @@
   "users": [
     {
       "id": "f233",
-      "name": "mahsa",
-      "email": "arabzadehmah@gmail.com",
-      "password": "12345",
-      "fakeToken": "fhdsufhoafiuyd83e4598"
-    },
-    {
-      "id": "f233",
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "12345",
       "fakeToken": "fhdsufhoaf340jfsdj83e4598"
+    },
+    {
+      "id": "37ac",
+      "name": "emma",
+      "email": "azadehmah@gmail.com",
+      "password": "1234532",
+      "fakeToken": "my-fake-token"
     }
   ]
 }

@@ -18,11 +18,11 @@ import type {
   standalone: true,
 })
 export class PlayComponent {
-  public Editor: typeof ClassicEditor | null = null;
+  Editor: typeof ClassicEditor | null = null;
 
-  public config: EditorConfig | null = null;
+  config: EditorConfig | null = null;
 
-  public ngOnInit(): void {
+  ngOnInit(): void {
     loadCKEditorCloud({
       version: '45.1.0',
       premium: true,
@@ -34,7 +34,6 @@ export class PlayComponent {
   ) {
     const { ClassicEditor, Essentials, Paragraph, Bold, Italic } =
       cloud.CKEditor;
-
     const { FormatPainter } = cloud.CKEditorPremiumFeatures;
 
     this.Editor = ClassicEditor;

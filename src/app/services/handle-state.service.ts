@@ -9,18 +9,16 @@ export class HandleStateService {
   private collapse = new BehaviorSubject(false);
   collapseValue = this.collapse.asObservable();
 
-  chart = new BehaviorSubject<Chart | null>(null);
-  chartValue$ = this.chart.asObservable();
+  // chart = new BehaviorSubject<Chart | null>(null);
+  // chartValue$ = this.chart.asObservable();
 
-  constructor() {}
+  // setChart(char: Chart) {
+  //   this.chart.next(char);
+  // }
 
-  setChart(char: Chart) {
-    this.chart.next(char);
-  }
-
-  getChart(): Chart | null {
-    return this.chart.getValue();
-  }
+  // getChart(): Chart | null {
+  //   return this.chart.getValue();
+  // }
 
   toggleMenu() {
     const currnetValue = this.collapse.getValue();

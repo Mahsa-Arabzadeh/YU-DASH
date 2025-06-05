@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
 
   removeUser(id: string) {
     this.authServic.removeUser(id).subscribe({
-      next: () => alert('are you coure?!'),
+      next: () => alert('are you soure?!'),
     });
   }
 }

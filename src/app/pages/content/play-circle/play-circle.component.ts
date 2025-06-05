@@ -91,6 +91,7 @@ export class PlayCircleComponent implements OnInit {
     const element = document.getElementById('capture');
     if (element) {
       const canvas = await html2canvas(element);
+      // base64
       const image = canvas.toDataURL('image/png');
       this.imageBase = image;
       return image;
