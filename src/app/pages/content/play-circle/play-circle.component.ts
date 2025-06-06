@@ -11,12 +11,15 @@ import { DialogModule } from 'primeng/dialog';
 import { WidgetContainerComponent } from '../../../components/shared/widgetContainer/widget.component';
 import { JalaliPipe } from '../../../pipes/jalali.pipe';
 import { MomentFormatPipe } from '../../../pipes/moment-format.pipe';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { QeydarDatePickerModule } from '@qeydar/datepicker';
 import { FormsModule } from '@angular/forms';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { LightboxModule, Lightbox } from 'ngx-lightbox';
+
+import { NumDirective } from '../../../directives/num.directive';
 
 @Component({
   selector: 'app-play-circle',
@@ -36,6 +39,8 @@ import { LightboxModule, Lightbox } from 'ngx-lightbox';
     NgSelectComponent,
     NgSelectModule,
     LightboxModule,
+    NumDirective,
+    InputTextModule,
   ],
   providers: [Lightbox],
 })
