@@ -1,0 +1,33 @@
+@media print {
+  body {
+    margin: 0 !important;
+  }
+}
+
+.main-container {
+  font-family: "Lato";
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ck-content {
+  font-family: "Lato";
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.editor-container_classic-editor .editor-container__editor {
+  min-width: 795px;
+  max-width: 795px;
+}
+
+.card {
+  width: 25vw;
+}
+
+#text-card {
+  background-color: #3bbfa1;
+  color: #fff;
+  padding: 10px 25px;
+}

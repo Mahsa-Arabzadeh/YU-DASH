@@ -1,9 +1,27 @@
 <h1>Editor</h1>
-
-<ckeditor
-  *ngIf="Editor && config"
-  data="<p>thats work..!</p>"
-  [editor]="Editor"
-  [config]="config"
->
-</ckeditor>
+<div class="main-container">
+  <form (submit)="handleSaveNote($event)">
+    <div
+      class="editor-container editor-container_classic-editor"
+      #editorContainerElement
+    >
+      <div class="editor-container__editor">
+        <div #editorElement>
+          <ckeditor
+            [editor]="Editor"
+            [config]="config"
+            *ngIf="Editor && config"
+            [(ngModel)]="items"
+            name="editorContent"
+          />
+        </div>
+      </div>
+    </div>
+    <p-button label="save note" type="submit" />
+  </form>
+  <p-card class="card" header="Your Notes">
+    <div *ngFor="let item of savedNote">
+      <div id="text-card">{{ convertText(item) }}</div>
+    </div>
+  </p-card>
+</div>
