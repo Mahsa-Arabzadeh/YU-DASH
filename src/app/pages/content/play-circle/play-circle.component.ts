@@ -20,6 +20,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { LightboxModule, Lightbox } from 'ngx-lightbox';
 
 import { NumDirective } from '../../../directives/num.directive';
+import { ChartComponent } from '../../../components/chart/chart.component';
 
 @Component({
   selector: 'app-play-circle',
@@ -41,6 +42,7 @@ import { NumDirective } from '../../../directives/num.directive';
     LightboxModule,
     NumDirective,
     InputTextModule,
+    ChartComponent,
   ],
   providers: [Lightbox],
 })
@@ -51,6 +53,7 @@ export class PlayCircleComponent implements OnInit {
   selectedCar: any;
   _album: any = [];
   _lightbox = inject(Lightbox);
+  convertSecond: number = 0;
 
   ngOnInit(): void {
     for (let i = 1; i <= 4; i++) {
@@ -65,6 +68,8 @@ export class PlayCircleComponent implements OnInit {
 
       this._album.push(album);
     }
+
+    this.dateTargetToCount();
   }
 
   open(index: number): void {
@@ -107,7 +112,15 @@ export class PlayCircleComponent implements OnInit {
   async pdfGenerator() {
     const imageBase64 = await this.generateImage();
     const doc = new jsPDF();
-    doc.addImage(imageBase64, 'PNG', 10, 0, 40, 10);
+    doc.addImage(imageBase64, 'PNG', 10, 10, 120, 100);
     doc.save('IMAGE.pdf');
+  }
+
+  dateTargetToCount() {
+    const currentDate = new Date();
+    const targetTime = new Date('2025-07-23T00:00:00');
+    const secondDifference =
+      (targetTime.getTime() - currentDate.getTime()) / 1000; //convert to second
+    this.convertSecond = secondDifference;
   }
 }
