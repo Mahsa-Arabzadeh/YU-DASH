@@ -6,11 +6,10 @@
       <label>angular-cd-timer: </label>
       <div>
         <cd-timer
-          [startTime]="100"
+          [startTime]="convertSecond"
           [endTime]="0"
           [countdown]="true"
           [autoStart]="true"
-          format="ms"
         >
         </cd-timer>
       </div>
@@ -18,11 +17,55 @@
   </app-widget-container>
 
   <app-widget-container [columns]="1" [rows]="1">
+    <label>Jalali / moment js: </label>
+    <h4>{{ "2025-05-16" | jalali }}</h4>
+    <h4>{{ "2025-05-16" | momentFormat }}</h4>
+  </app-widget-container>
+
+  <app-widget-container [columns]="1" [rows]="1">
+    <div style="display: flex; gap: 16px; flex-direction: column">
+      <label>JSpdf: </label>
+      <div>
+        <p-button variant="outlined" (onClick)="pdfGenerator()"
+          >Generate PDF</p-button
+        >
+      </div>
+    </div>
+  </app-widget-container>
+
+  <app-widget-container [columns]="1" [rows]="1">
+    <div style="display: flex; gap: 16px; flex-direction: column">
+      <label>ngx-lightbox: </label>
+      <div *ngFor="let image of _album; let i = index">
+        <img [src]="image.thumb" (click)="open(i)" />
+      </div>
+    </div>
+  </app-widget-container>
+
+  <app-widget-container [columns]="2" [rows]="2">
+    <div style="display: flex; gap: 16px; flex-direction: column">
+      <label>ng-select: </label>
+      <div>
+        <ng-select
+          [items]="cars"
+          bindLabel="name"
+          bindValue="id"
+          [(ngModel)]="selectedCar"
+        >
+        </ng-select>
+      </div>
+      <label>Only Number Directive:</label>
+      <input pInputText appNum />
+    </div>
+  </app-widget-container>
+
+  <app-widget-container [columns]="2" [rows]="2">
     <div class="container">
       <div>
         <label>html2canvas: </label>
         <div id="capture">
-          <h4>element</h4>
+          <h2>Doughnut chart</h2>
+          <app-chart [chartType]="'doughnut'"></app-chart>
         </div>
       </div>
       <div>
@@ -46,39 +89,6 @@
   </app-widget-container>
 
   <app-widget-container [columns]="1" [rows]="1">
-    <label>Jalali / moment js: </label>
-    <h4>{{ "2025-05-16" | jalali }}</h4>
-    <h4>{{ "2025-05-16" | momentFormat }}</h4>
-  </app-widget-container>
-
-  <app-widget-container [columns]="1" [rows]="1">
-    <div style="display: flex; gap: 16px; flex-direction: column">
-      <label>JSpdf: </label>
-      <div>
-        <p-button variant="outlined" (onClick)="pdfGenerator()"
-          >Generate PDF</p-button
-        >
-      </div>
-    </div>
-  </app-widget-container>
-
-  <app-widget-container [columns]="2" [rows]="2">
-    <div style="display: flex; gap: 16px; flex-direction: column">
-      <label>ng-select: </label>
-      <div>
-        <ng-select
-          [items]="cars"
-          bindLabel="name"
-          bindValue="id"
-          [(ngModel)]="selectedCar"
-        >
-        </ng-select>
-      </div>
-      <input pInputText appNum />
-    </div>
-  </app-widget-container>
-
-  <app-widget-container [columns]="1" [rows]="1">
     <div style="display: flex; gap: 16px; flex-direction: column">
       <label>Qeydar Date and Time Pickers: </label>
       <div>
@@ -86,15 +96,6 @@
           [(ngModel)]="selectedDate"
           [calendarType]="'jalali'"
         ></qeydar-date-picker>
-      </div>
-    </div>
-  </app-widget-container>
-
-  <app-widget-container [columns]="1" [rows]="1">
-    <div style="display: flex; gap: 16px; flex-direction: column">
-      <label>ngx-lightbox: </label>
-      <div *ngFor="let image of _album; let i = index">
-        <img [src]="image.thumb" (click)="open(i)" />
       </div>
     </div>
   </app-widget-container>
